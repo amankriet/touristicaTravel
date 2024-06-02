@@ -11,5 +11,4 @@ Currently, two official plugins are available:
 
 <img src='./screenshots/Desktop-main.png' alt='Desktop Main' />
 <img src='./screenshots/Desktop-footer.png' alt='Desktop Footer' />
-<img src='./screenshots/Mobile-main.png' alt='Mobile Main' />
-<img src='./screenshots/Mobile-footer.png' alt='Mobile Footer' />
+<img src='./screenshots/Mobile-main.png' alt='Mobile Main' /> <img src='./screenshots/Mobile-footer.png' alt='Mobile Footer' />
