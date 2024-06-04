@@ -1,22 +1,38 @@
 import './App.css';
 import emailjs from '@emailjs/browser'
 import { useRef } from "react"
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
 
 function App() {
   const form = useRef(null);
+
+  const notify = () => toast.success('🦄 Mail Sent!', {
+    position: "bottom-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+    transition: Bounce,
+    });
 
   function sendEmail(e) {
     e.preventDefault();
 
     // TODO: Setup client's mail id
     emailjs.sendForm(
-      'amankriet_gmail',
-      'amankriet_gmail_template',
+      'touristica_service',
+      'touristica_template',
       form.current, {
       publicKey: import.meta.env.VITE_PUBLIC_KEY,
     }
     ).then(result => {
       console.log('success:', result);
+      notify()
+      e.target.reset()
     }, (err) => {
       console.log('error:', err);
     }).catch(err => {
@@ -59,7 +75,7 @@ function App() {
         </div>
       </section>
       <section id="services">
-        <div id="cardSection" class="card-grid">
+        <div id="cardSection" className="card-grid">
           <img src="assets/services-1.png" alt="Services 1" className="card" />
           <img src="assets/services-2.png" alt="Services 2" className="card" />
           <img src="assets/services-3.png" alt="Services 3" className="card" />
@@ -127,6 +143,19 @@ function App() {
           <p>&copy; Escapes By Touristica</p>
           <p className='credits'>Developed by <a href="https://amankriet.com" target='_blank'>Aman Kumar</a></p>
         </div>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition:Bounce
+        />
       </footer>
     </>
   );
