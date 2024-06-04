@@ -5,6 +5,18 @@ html {
   font-family: Arial, sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body > div {
+  width: 100%;
+}
+
+body > div > * {
+  padding: 4px;
+}
+
 nav {
   position: fixed;
   margin-top: 8px;
@@ -80,9 +92,37 @@ button:hover {
   outline: none;
 }
 
-#services {
+.short-desc {
   position: absolute;
   bottom: 0;
+}
+
+#services {
+  height: 100%;
+  padding: 8px;
+  background-image: url('assets/trip-equipments-background.jpg');
+  background-size: cover;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 20%)); /* Adjust column size as needed */
+  gap: 24px; /* Adjust gap between cards */
+  justify-items: center;
+  justify-content: center;
+  grid-auto-flow: row;
+}
+
+/* Styles for the cards */
+.card {
+  height: 420px;
+  aspect-ratio: 13/16;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
 }
 
 footer {

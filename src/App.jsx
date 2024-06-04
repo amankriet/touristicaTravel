@@ -1,6 +1,6 @@
 import './App.css';
 import emailjs from '@emailjs/browser'
-import {useRef} from "react"
+import { useRef } from "react"
 
 function App() {
   const form = useRef(null);
@@ -10,15 +10,17 @@ function App() {
 
     // TODO: Setup client's mail id
     emailjs.sendForm(
-        'amankriet_gmail',
-        'amankriet_gmail_template',
-        form.current, {
-          publicKey: import.meta.env.VITE_PUBLIC_KEY,
-        }
+      'amankriet_gmail',
+      'amankriet_gmail_template',
+      form.current, {
+      publicKey: import.meta.env.VITE_PUBLIC_KEY,
+    }
     ).then(result => {
-      console.log('success:',result);
+      console.log('success:', result);
     }, (err) => {
-      console.log('error:',err);
+      console.log('error:', err);
+    }).catch(err => {
+      console.error('Failed: ', err)
     })
   }
 
@@ -32,9 +34,9 @@ function App() {
           {/* <li>
             <a href="#about">About</a>
           </li> */}
-          {/* <li>
+          <li>
             <a href="#services">Services</a>
-          </li> */}
+          </li>
           <li>
             <a href="#contact">Contact</a>
           </li>
@@ -46,13 +48,21 @@ function App() {
           <p>Your journey begins here</p>
           <button id="explore-btn">Explore Now</button>
         </div>
-        <div id="services">
+        <div className="short-desc">
           <h2>Your Destination, Our Plan 🤘</h2>
           <p>
             We provide you the best Adventure Coordinator, Weekend Getaway,
             Family Trips, Group Tours and many more services for your upcoming
             travel destinations!
           </p>
+        </div>
+      </section>
+      <section id="services">
+        <div id="cardSection" class="card-grid">
+          <img src="src/assets/touristica-services-1.jpg" alt="Services 1" className="card" />
+          <img src="src/assets/touristica-services-2.jpg" alt="Services 2" className="card" />
+          <img src="src/assets/touristica-services-3.jpg" alt="Services 3" className="card" />
+          <img src="src/assets/touristica-services-4.jpg" alt="Services 4" className="card" />
         </div>
       </section>
       <footer id="contact">
