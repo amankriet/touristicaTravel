@@ -28,7 +28,7 @@ function App() {
     <>
       <nav>
         <div className="logo">
-          <img src="src/assets/touristica-logo.jpg" alt="" />
+          <img src="assets/touristica-logo.jpg" alt="Escapes By Touristica" title='Escapes By Touristica' />
           {/* <h2>Escapes By Touristica</h2> */}
         </div>
         <ul>
@@ -60,10 +60,10 @@ function App() {
       </section>
       <section id="services">
         <div id="cardSection" class="card-grid">
-          <img src="src/assets/services-1.png" alt="Services 1" className="card" />
-          <img src="src/assets/services-2.png" alt="Services 2" className="card" />
-          <img src="src/assets/services-3.png" alt="Services 3" className="card" />
-          <img src="src/assets/services-4.png" alt="Services 4" className="card" />
+          <img src="assets/services-1.png" alt="Services 1" className="card" />
+          <img src="assets/services-2.png" alt="Services 2" className="card" />
+          <img src="assets/services-3.png" alt="Services 3" className="card" />
+          <img src="assets/services-4.png" alt="Services 4" className="card" />
         </div>
       </section>
       <footer id="contact">
