@@ -29,8 +29,12 @@ nav {
   color: #222;
 }
 
-.logo h2 {
-  margin: 0;
+.logo img {
+  width: 64px;
+  padding: 0;
+  margin-left: 8px;
+  border-radius: 32px;
+  object-fit: cover;
 }
 
 nav ul {
@@ -115,14 +119,21 @@ button:hover {
 
 /* Styles for the cards */
 .card {
-  height: 420px;
-  aspect-ratio: 13/16;
+  height: 320px;
+  aspect-ratio: 1/1;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 4px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   object-fit: cover;
+  transition: transform 0.25s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(0.96);
+  filter: drop-shadow(0 0 8px #222);
 }
 
 footer {
@@ -188,6 +199,10 @@ footer form button:hover {
   background-color: #e65100;
 }
 
+footer p:nth-last-child(2) {
+  margin-top: 8px;
+}
+
 @media only screen and (min-width: 600px) {
   h1 {
     font-size: 3rem;
@@ -196,7 +211,11 @@ footer form button:hover {
   
   p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    height: 400px;
   }
 
   footer form {

@@ -28,7 +28,8 @@ function App() {
     <>
       <nav>
         <div className="logo">
-          <h2>Escapes By Touristica</h2>
+          <img src="src/assets/touristica-logo.jpg" alt="" />
+          {/* <h2>Escapes By Touristica</h2> */}
         </div>
         <ul>
           {/* <li>
@@ -46,7 +47,7 @@ function App() {
         <div className="hero-content">
           <h1>Welcome to Our Travel Company</h1>
           <p>Your journey begins here</p>
-          <button id="explore-btn">Explore Now</button>
+          <a href="https://forms.gle/88e5zdE3PpJVvYDZ6" target='_blank'><button id="explore-btn">Explore Now</button></a>
         </div>
         <div className="short-desc">
           <h2>Your Destination, Our Plan 🤘</h2>
@@ -59,10 +60,10 @@ function App() {
       </section>
       <section id="services">
         <div id="cardSection" class="card-grid">
-          <img src="src/assets/touristica-services-1.jpg" alt="Services 1" className="card" />
-          <img src="src/assets/touristica-services-2.jpg" alt="Services 2" className="card" />
-          <img src="src/assets/touristica-services-3.jpg" alt="Services 3" className="card" />
-          <img src="src/assets/touristica-services-4.jpg" alt="Services 4" className="card" />
+          <img src="src/assets/services-1.png" alt="Services 1" className="card" />
+          <img src="src/assets/services-2.png" alt="Services 2" className="card" />
+          <img src="src/assets/services-3.png" alt="Services 3" className="card" />
+          <img src="src/assets/services-4.png" alt="Services 4" className="card" />
         </div>
       </section>
       <footer id="contact">
@@ -124,6 +125,7 @@ function App() {
             </form>
           </div>
           <p>&copy; Escapes By Touristica</p>
+          <p className='credits'>Developed by <a href="https://amankriet.com" target='_blank'>Aman Kumar</a></p>
         </div>
       </footer>
     </>
