@@ -1,8 +1,26 @@
-import { useState } from 'react';
 import './App.css';
+import emailjs from '@emailjs/browser'
+import {useRef} from "react"
 
 function App() {
-  const [count, setCount] = useState(0);
+  const form = useRef(null);
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    // TODO: Setup client's mail id
+    emailjs.sendForm(
+        'amankriet_gmail',
+        'amankriet_gmail_template',
+        form.current, {
+          publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        }
+    ).then(result => {
+      console.log('success:',result);
+    }, (err) => {
+      console.log('error:',err);
+    })
+  }
 
   return (
     <>
@@ -38,9 +56,9 @@ function App() {
         </div>
       </section>
       <footer id="contact">
-        <div class="footer-content">
+        <div className="footer-content">
           <div className="contacts-links">
-            <div class="contact-info">
+            <div className="contact-info">
               <h2>Contact Us</h2>
               <ul>
                 <li>
@@ -53,7 +71,7 @@ function App() {
                 </li>
               </ul>
             </div>
-            <div class="social-links">
+            <div className="social-links">
               <h2>Follow Us</h2>
               <ul>
                 {/* <li>
@@ -77,9 +95,9 @@ function App() {
               </ul>
             </div>
           </div>
-          <div class="contact-form">
+          <div className="contact-form">
             <h2>Send Us a Message</h2>
-            <form action="submit.php" method="post">
+            <form ref={form} onSubmit={sendEmail} method="post">
               <input type="text" name="name" placeholder="Your Name" required />
               <input
                 type="email"
